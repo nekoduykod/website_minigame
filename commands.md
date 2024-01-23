@@ -39,4 +39,11 @@ filter() method. Member.objects.filter(firstname='Emil').values()
 Member.objects.filter(firstname__startswith='L').values(); WHERE firstname LIKE 'L%'
 mydata = Member.objects.all().order_by('firstname').values() . descending = ('-firstname') 
 # create superuser for django.admin
-py manage.py createsuperuser (sasha, password456, fake@gmail.com)   
+py manage.py createsuperuser (sasha, password456, fake@gmail.com)
+# or change via UI of admin
+
+# when added new styles css
+py manage.py collectstatic
+
+# when db in settings.py, use this, but no data will be
+py manage.py migrate
