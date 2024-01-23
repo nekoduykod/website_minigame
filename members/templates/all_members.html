@@ -1,18 +1,17 @@
 {% extends "master.html" %}
 
-{% block title %}List of users{% endblock %}
+{% block title %}
+  List of all users
+{% endblock %}
+
 
 {% block content %}
-
-   <p><a href="/">HOME</a></p>
-
-   <h1>Members</h1>
-
-   <ul>
-     {% for x in mymembers %}
-       <li><a href="details/{{ x.id }}">{{ x.firstname }} {{ x.lastname }}</a></li>
-     {% endfor %}
-   </ul>
-
-   <p>In views.py you can see how to import and fetch members from the database.</p>
+  <div class="mycard">
+    <h1>Members</h1>
+    <ul>
+      {% for x in mymembers %}
+        <li onclick="window.location = 'details/{{ x.slug }}'">{{ x.firstname }} {{ x.lastname }}</li>
+      {% endfor %}
+    </ul>
+  </div>
 {% endblock %}
