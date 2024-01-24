@@ -1,0 +1,34 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Minigame
+{% endblock %}
+
+{% block content %}
+  <div class="main">
+    <h1>Minigame</h1>
+    
+    <h3>Enjoy it!</h3>
+
+    <p>------------------------------------------</p>
+
+    <form method="post" action="{% url 'minigame' %}">
+      {% csrf_token %}
+      <label for="bet">How much do you want to bet?</label>
+      <input type="number" name="bet" required>
+      <button type="submit">Draw Marble</button>
+    </form>
+
+    {% if game_over %}
+      <p>Game over! You lost too much gold!!!</p>
+    {% else %}
+      <p>Current Purse: {{ purse }}</p>
+      <p>Last draw: {{ marble }}</p>
+      <p>Round Result: ({{ marble }}): {{ result }}</p>
+      <p>------------------------------------------</p>
+
+    {% endif %}
+
+    <p>Check out leaderboard <a href="{% url 'users' %}">users</a></p>
+  </div>
+{% endblock %}
