@@ -2,7 +2,7 @@
 
 <img src="/static/images/home.jpg" />
 
-<img src="/static/images/users.jpg" />
+<img src="/static/images/users1.jpg" />
 
 <img src="/static/images/minigame_stateless1.jpg" />
 
