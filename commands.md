@@ -6,7 +6,7 @@ py manage.py runserver
 
 
 # creation of a new app folder
-py manage.py startapp members
+py manage.py startapp your_app
 
 
 # when new app created (e.g. /members..)
