@@ -4,6 +4,8 @@
 
 <img src="/static/images/users1.jpg" />
 
+<img src="/static/images/users2.jpg" />
+
 <img src="/static/images/minigame_stateless1.jpg" />
 
 <img src="/static/images/minigame_stateless2.jpg" />
