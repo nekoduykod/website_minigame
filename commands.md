@@ -1,3 +1,6 @@
+venv\Scripts\activate
+pip install -r requirements.txt
+
 # very beginning - creates necessary files
 django-admin startproject name_name
 
