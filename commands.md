@@ -1,16 +1,18 @@
+python -m venv venv
 venv\Scripts\activate
 pip install -r requirements.txt
 
-## very beginning - creates necessary files
-django-admin startproject your_name
-
-## opens localhost server
+## localhost server
 py manage.py runserver
 
-## creation of a new app folder
+# other commands
+## very beginning - creates necessary files
+django-admin startproject your_title
+
+## creation of a new app
 py manage.py startapp your_app
 
-## when new app created (e.g. /members..)
+## when new app created (e.g. /projects..)
 py manage.py migrate
 
 ## creates a model (check migrations/)
@@ -19,30 +21,5 @@ py manage.py makemigrations myapp
 python manage.py makemigrations  > creates a table schema to be migrated to db
 py manage.py migrate             > creates a table in your postgresql db
 
-## to check the sql query
-py manage.py sqlmigrate members 0001
-## to add records, open python shell
-py manage.py shell
-## import the model (data; it is an object, which is a db table)
-from members.models import Member
-Member.objects.all()
-member = Member(firstname='Andrii', lastname='Zebra')
-member.save()
-x = Member.objects.all()[4]
-x.firstname
-x.firstname = "Sasha"
-x.save()
-## values() method returns object as Python dictionary
-Member.objects.all().values() 
-x.delete()
-## values_list() helps to return specific columns
-mydata = Member.objects.values_list('firstname')
-filter() method. Member.objects.filter(firstname='Emil').values()
-Member.objects.filter(firstname__startswith='L').values(); WHERE firstname LIKE 'L%'
-mydata = Member.objects.all().order_by('firstname').values() . descending = ('-firstname') 
-
 ## create superuser for django.admin
-py manage.py createsuperuser (sasha, password456, fake@gmail.com) <= or change via UI of Django admin UI
-
-## when added new styles css
-py manage.py collectstatic
+py manage.py createsuperuser (sasha, passw, fake@gmail.com) <= or change via UI of Django admin UI
